@@ -1,0 +1,6 @@
+{
+  "name": "Dizozet - Digital Subscriptions & Services Marketplace",
+  "description": "Discover affordable digital subscriptions, powerful digital products, and professional online services with instant WhatsApp ordering and dedicated support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="dz-bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="70%" stop-color="#090C12" />
+      <stop offset="100%" stop-color="#030407" />
+    </radialGradient>
+
+    <!-- Inner Disc Gradient -->
+    <radialGradient id="dz-inner-disc" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#1E2433" />
+      <stop offset="65%" stop-color="#0D111A" />
+      <stop offset="100%" stop-color="#05070B" />
+    </radialGradient>
+
+    <!-- Gold Metallic Gradients -->
+    <linearGradient id="dz-gold-bright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE885" />
+      <stop offset="25%" stop-color="#F5B82E" />
+      <stop offset="50%" stop-color="#E29A10" />
+      <stop offset="75%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#9E6800" />
+    </linearGradient>
+
+    <linearGradient id="dz-gold-bevel" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#805300" />
+      <stop offset="40%" stop-color="#C9860A" />
+      <stop offset="70%" stop-color="#F5C042" />
+      <stop offset="100%" stop-color="#FFEBB0" />
+    </linearGradient>
+
+    <linearGradient id="dz-gold-ring" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#F5B82E" />
+      <stop offset="30%" stop-color="#FFE885" />
+      <stop offset="55%" stop-color="#B87B08" />
+      <stop offset="75%" stop-color="#4A3408" />
+      <stop offset="90%" stop-color="#F5B82E" />
+      <stop offset="100%" stop-color="#FFEBB0" />
+    </linearGradient>
+
+    <!-- Silver Metallic Gradients -->
+    <linearGradient id="dz-silver-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="20%" stop-color="#E2E8F0" />
+      <stop offset="45%" stop-color="#CBD5E1" />
+      <stop offset="70%" stop-color="#94A3B8" />
+      <stop offset="90%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <linearGradient id="dz-silver-bevel" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <!-- 3D Shadow Filters -->
+    <filter id="dz-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.85" />
+    </filter>
+
+    <filter id="dz-inner-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.9" />
+    </filter>
+
+    <filter id="dz-gold-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#F59E0B" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="500" height="500" rx="36" fill="url(#dz-bg-grad)" />
+
+  <!-- Outer Ambient Radial Glow -->
+  <circle cx="250" cy="250" r="190" fill="#E29A10" opacity="0.08" />
+
+  <!-- Base 3D Emblem Disc -->
+  <g filter="url(#dz-shadow)">
+    <!-- Dark Inner Circular Plate -->
+    <circle cx="250" cy="250" r="162" fill="url(#dz-inner-disc)" stroke="#1F2937" stroke-width="3" />
+    <!-- Subtle Inner Rim Highlight -->
+    <circle cx="250" cy="250" r="158" fill="none" stroke="#374151" stroke-width="1.5" opacity="0.6" />
+  </g>
+
+  <!-- Golden Circular Framing Ring (Asymmetrical 3D Ring with Top and Bottom Lighting) -->
+  <g filter="url(#dz-shadow)">
+    <!-- Outer Golden Arc -->
+    <path
+      d="M 250 82 
+         A 168 168 0 1 1 122 358 
+         A 176 176 0 0 0 250 82 Z"
+      fill="url(#dz-gold-ring)"
+      filter="url(#dz-gold-glow)"
+    />
+    <!-- Ring Top Highlight Sparkle -->
+    <circle cx="250" cy="83" r="3" fill="#FFFFFF" opacity="0.9" />
+    <!-- Ring Bottom Highlight Sparkle -->
+    <circle cx="260" cy="417" r="3" fill="#FFFFFF" opacity="0.9" />
+  </g>
+
+  <!-- ==================== MONOGRAM: D (Brushed Silver) ==================== -->
+  <g filter="url(#dz-shadow)">
+    <!-- Base D Shape with Sharp Angular Flair & Curved Outer Spine -->
+    <path
+      d="M 105 130
+         L 230 130
+         C 285 130 330 170 330 225
+         C 330 250 318 272 298 288
+         L 245 288
+         L 262 268
+         C 278 255 288 238 288 220
+         C 288 185 258 166 220 166
+         L 165 166
+         L 165 305
+         C 165 330 150 355 125 368
+         L 125 170
+         L 105 170
+         Z"
+      fill="url(#dz-silver-main)"
+    />
+
+    <!-- D Bevel and Shadow Facets -->
+    <path
+      d="M 105 130 L 138 145 L 138 170 L 105 170 Z"
+      fill="url(#dz-silver-bevel)"
+      opacity="0.85"
+    />
+    <path
+      d="M 138 145 L 230 145 C 275 145 315 178 315 225 C 315 245 305 264 288 278 L 272 260 C 282 250 288 236 288 220 C 288 185 258 166 220 166 L 165 166 L 138 145 Z"
+      fill="#FFFFFF"
+      opacity="0.25"
+    />
+    <path
+      d="M 165 166 L 165 305 C 165 330 150 355 125 368 L 138 340 C 145 328 148 315 148 300 L 148 166 Z"
+      fill="#475569"
+      opacity="0.6"
+    />
+    <!-- D Left Wing Flange -->
+    <path
+      d="M 105 130 L 138 145 L 125 170 L 105 170 Z"
+      fill="#CBD5E1"
+    />
+  </g>
+
+  <!-- ==================== MONOGRAM: Z (Radiant Polished Gold) ==================== -->
+  <g filter="url(#dz-shadow)">
+    <!-- Sharp Golden 'Z' Overlapping the 'D' and Extending Razor Tips -->
+    <!-- Top Bar of Z -->
+    <path
+      d="M 215 190
+         L 375 168
+         L 415 165
+         L 335 205
+         L 245 205
+         C 225 205 210 200 215 190 Z"
+      fill="url(#dz-gold-bright)"
+    />
+
+    <!-- Diagonal Slash & Main Body of Z -->
+    <path
+      d="M 335 205
+         L 165 320
+         L 138 340
+         C 155 330 180 325 210 325
+         L 380 325
+         L 410 300
+         L 345 348
+         L 185 348
+         C 160 348 145 340 140 330
+         L 295 220
+         L 335 205 Z"
+      fill="url(#dz-gold-bevel)"
+    />
+
+    <!-- Full Unified Front Z Blade (Crisp Specular Surface) -->
+    <path
+      d="M 210 190
+         L 370 168
+         L 425 164
+         L 335 212
+         L 250 212
+         L 162 312
+         L 360 312
+         L 405 298
+         L 345 345
+         L 170 345
+         L 145 330
+         L 290 215
+         Z"
+      fill="url(#dz-gold-bright)"
+      filter="url(#dz-gold-glow)"
+    />
+
+    <!-- Top Wing Razor Highlight Edge -->
+    <path
+      d="M 210 190 L 425 164 L 375 185 L 235 198 Z"
+      fill="#FFFBEB"
+      opacity="0.75"
+    />
+
+    <!-- Lower Wing Edge Chamfer -->
+    <path
+      d="M 162 312 L 360 312 L 405 298 L 365 325 L 185 325 Z"
+      fill="#B45309"
+      opacity="0.85"
+    />
+
+    <!-- Central Z Diagonal Bevel Split Line -->
+    <path
+      d="M 305 215 L 155 330 L 165 340 L 325 225 Z"
+      fill="#FDE68A"
+      opacity="0.9"
+    />
+  </g>
+
+  <!-- Specular 3D Reflection Glints on the Monogram -->
+  <circle cx="218" cy="192" r="2.5" fill="#FFFFFF" opacity="0.95" />
+  <circle cx="423" cy="165" r="2" fill="#FFFFFF" opacity="0.95" />
+  <circle cx="165" cy="312" r="2" fill="#FFFFFF" opacity="0.95" />
+  <circle cx="403" cy="299" r="2" fill="#FFFFFF" opacity="0.95" />
+</svg>
