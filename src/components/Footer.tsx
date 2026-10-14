@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => handleLink('/products')}
                   className="hover:text-[#F28C28] transition-colors text-left"
                 >
-                  Products (Coming Soon)
+                  Products
                 </button>
               </li>
               <li>
@@ -164,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </a>
               </div>
 
-              {/* Email icon — Email Support: support.dizozet@gmail.com */}
+              {/* Email icon — Email Support: dizozet.org@gmail.com */}
               <div>
                 <div className="text-[11px] text-[#6B7280] uppercase tracking-wider font-medium mb-1">
                   Email Support

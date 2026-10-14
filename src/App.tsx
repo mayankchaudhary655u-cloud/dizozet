@@ -8,7 +8,7 @@ import { Navbar } from './components/Navbar';
 import { BackButton } from './components/BackButton';
 import { Hero } from './components/Hero';
 import { SubscriptionsSection } from './components/SubscriptionsSection';
-import { ProductsComingSoon } from './components/ProductsComingSoon';
+import { ProductsSection } from './components/ProductsSection';
 import { ServicesSection } from './components/ServicesSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { HowItWorks } from './components/HowItWorks';
@@ -22,8 +22,9 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { BlogDetailModal } from './components/BlogDetailModal';
 import { LegalPage } from './pages/LegalPage';
 
-import { SubscriptionItem, ServiceItem, BlogPost, ReviewItem } from './types';
+import { SubscriptionItem, DigitalProductItem, ServiceItem, BlogPost, ReviewItem } from './types';
 import { getSubscriptions } from './data/subscriptions';
+import { getDigitalProducts } from './data/products';
 import { getServices } from './data/services';
 import { getReviews, addReview } from './data/reviews';
 import { getBlogPosts } from './data/blogs';
@@ -34,6 +35,7 @@ export default function App() {
 
   // Dynamic Data States
   const [subscriptions] = useState<SubscriptionItem[]>(getSubscriptions());
+  const [products] = useState<DigitalProductItem[]>(getDigitalProducts());
   const [services] = useState<ServiceItem[]>(getServices());
   const [reviews, setReviews] = useState<ReviewItem[]>(getReviews());
   const [blogs] = useState<BlogPost[]>(getBlogPosts());
@@ -90,11 +92,16 @@ export default function App() {
       );
     }
 
-    // Dedicated Digital Products Coming Soon Page
+    // Dedicated Digital Products Page (Includes 2000+ AI Videos Bundle)
     if (currentPath === '/products') {
       return (
         <div className="pt-2">
-          <ProductsComingSoon onBackToHome={() => navigateTo('/')} />
+          <ProductsSection
+            products={products}
+            isFullProductsPage={true}
+          />
+          <WhyChooseUs />
+          <FAQSection />
         </div>
       );
     }
@@ -195,7 +202,14 @@ export default function App() {
           isFullCatalogPage={false}
         />
 
-        {/* 2. Featured Services */}
+        {/* 2. Featured Digital Products & AI Video Bundles */}
+        <ProductsSection
+          products={products}
+          onViewAll={() => navigateTo('/products')}
+          isFullProductsPage={false}
+        />
+
+        {/* 3. Featured Services */}
         <ServicesSection
           services={services}
           onViewAll={() => navigateTo('/services')}
@@ -208,7 +222,7 @@ export default function App() {
         {/* How It Works */}
         <HowItWorks />
 
-        {/* 3. Customer Reviews Section (Kept on Homepage as requested) */}
+        {/* 4. Customer Reviews Section */}
         <CustomerReviewsSection
           reviews={reviews}
           onAddReview={handleAddReview}
@@ -216,7 +230,7 @@ export default function App() {
           isFullReviewsPage={false}
         />
 
-        {/* 4. Blog Guides Section (Kept on Homepage as requested) */}
+        {/* 5. Blog Guides Section */}
         <BlogSection
           posts={blogs}
           onSelectPost={setSelectedBlog}
@@ -244,7 +258,7 @@ export default function App() {
         onNavigate={navigateTo}
       />
 
-      {/* Top-Left Back Button (Hidden on homepage, visible on all inner pages/sections) */}
+      {/* Top-Left Back Button */}
       <BackButton
         currentPath={currentPath}
         onNavigateHome={() => navigateTo('/')}

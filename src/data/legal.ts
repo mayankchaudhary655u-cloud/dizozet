@@ -47,7 +47,7 @@ export const PRIVACY_POLICY = {
     },
     {
       heading: '5. Contact Us',
-      content: 'If you have questions regarding your personal information, reach out directly to support@dizozet.com or message our team on WhatsApp.'
+      content: 'If you have questions regarding your personal information, reach out directly to dizozet.org@gmail.com or message our team on WhatsApp.'
     }
   ]
 };

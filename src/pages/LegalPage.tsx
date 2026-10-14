@@ -57,7 +57,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onBack }) => {
         </div>
 
         <div className="pt-6 border-t border-[#F0E7DE] text-xs text-[#6B7280] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span>Questions? Contact support@dizozet.com or WhatsApp (+91 78957 68118)</span>
+          <span>Questions? Contact dizozet.org@gmail.com or WhatsApp (+91 78957 68118)</span>
           <button
             onClick={onBack}
             className="px-4 py-2 bg-[#FFF5EB] hover:bg-[#FEEDD9] text-[#252525] font-medium rounded-lg border border-[#F0E7DE]"

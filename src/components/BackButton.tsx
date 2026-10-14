@@ -21,12 +21,15 @@ export const BackButton: React.FC<BackButtonProps> = ({ currentPath, onNavigateH
       return;
     }
 
-    // Reliable fallback: navigate back in history if there is history, otherwise return to home
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      onNavigateHome();
-    }
+    const currentHash = window.location.hash;
+    window.history.back();
+
+    // Fallback: if history didn't change hash, navigate to homepage
+    setTimeout(() => {
+      if (window.location.hash === currentHash) {
+        onNavigateHome();
+      }
+    }, 100);
   };
 
   return (

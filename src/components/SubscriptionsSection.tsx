@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SubscriptionItem } from '../types';
 import { SubscriptionCard } from './SubscriptionCard';
+import { AnimatedSubscriptionTruck } from './AnimatedSubscriptionTruck';
 import { Search, Sparkles, ArrowRight } from 'lucide-react';
 
 interface SubscriptionsSectionProps {
@@ -105,8 +106,8 @@ export const SubscriptionsSection: React.FC<SubscriptionsSectionProps> = ({
     : getHomepagePopularSubscriptions();
 
   return (
-    <section id="subscriptions" className="py-12 md:py-16 bg-white border-b border-[#F0E7DE]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="subscriptions" className="py-12 md:py-16 bg-white border-b border-[#F0E7DE] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#F28C28] bg-[#FFF5EB] border border-[#F0E7DE] px-3 py-1 rounded-full mb-2.5">
@@ -114,39 +115,37 @@ export const SubscriptionsSection: React.FC<SubscriptionsSectionProps> = ({
             <span>Digital Subscriptions</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#252525] tracking-tight text-balance">
-            {isFullCatalogPage ? 'All Subscription Plans' : 'Popular Subscriptions'}
+            {isFullCatalogPage ? 'All Subscriptions' : 'Popular Subscriptions'}
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#6B7280]">
-            Affordable plans with direct WhatsApp ordering (+91 78957 68118).
+            Smarter prices on AI tools, design suites, and streaming accounts.
           </p>
         </div>
 
-        {/* Filters & Search Toolbar (on Full Catalog Page or if searching) */}
+        {/* Category Filters & Search Bar (Full catalog page only) */}
         {isFullCatalogPage && (
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-            {/* Category Tabs */}
-            <div className="flex items-center gap-1.5 p-1 bg-[#FFF5EB] border border-[#F0E7DE] rounded-xl overflow-x-auto max-w-full">
-              {categories.map((cat) => (
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-1.5 p-1 bg-[#FFF5EB] border border-[#F0E7DE] rounded-xl overflow-x-auto no-scrollbar">
+              {categories.map((category) => (
                 <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap shrink-0 ${
-                    selectedCategory === cat
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                    selectedCategory === category
                       ? 'bg-[#F28C28] text-white font-bold shadow-2xs'
                       : 'text-[#6B7280] hover:text-[#252525]'
                   }`}
                 >
-                  {cat}
+                  {category}
                 </button>
               ))}
             </div>
 
-            {/* Search Input */}
-            <div className="relative w-full md:w-68">
-              <Search className="w-4 h-4 text-[#6B7280] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <div className="relative w-full md:w-64">
+              <Search className="w-3.5 h-3.5 text-[#9CA3AF] absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search plan..."
+                placeholder="Search plan or category..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2 bg-white border border-[#F0E7DE] rounded-lg text-xs text-[#252525] placeholder-[#9CA3AF] focus:outline-none focus:border-[#F28C28] transition-colors"
@@ -183,7 +182,7 @@ export const SubscriptionsSection: React.FC<SubscriptionsSectionProps> = ({
               }}
               className="text-xs text-[#F28C28] hover:underline font-semibold"
             >
-              Reset filters & search
+              Reset filters &amp; search
             </button>
           </div>
         )}
@@ -193,13 +192,18 @@ export const SubscriptionsSection: React.FC<SubscriptionsSectionProps> = ({
           <div className="mt-10 text-center">
             <button
               onClick={onViewAll}
-              className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-[#252525] hover:text-[#F28C28] bg-white hover:bg-[#FFF5EB] border border-[#F0E7DE] hover:border-[#F28C28] rounded-xl transition-all shadow-2xs group"
+              className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-[#252525] hover:text-[#F28C28] bg-white hover:bg-[#FFF5EB] border border-[#F0E7DE] hover:border-[#F28C28] rounded-xl transition-all shadow-2xs group cursor-pointer"
             >
               <span>View More Subscriptions</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform text-[#F28C28]" />
             </button>
           </div>
         )}
+      </div>
+
+      {/* CREATIVE ANIMATED TRUCK ROAD SECTION IMMEDIATELY BELOW SUBSCRIPTIONS */}
+      <div className="mt-8 pt-4 border-t border-[#F0E7DE]">
+        <AnimatedSubscriptionTruck subscriptions={subscriptions} />
       </div>
     </section>
   );

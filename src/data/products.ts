@@ -13,7 +13,6 @@ export const INITIAL_PRODUCTS: DigitalProductItem[] = [
     popular: true,
     iconName: 'Film',
     image: '/ai-videos-bundle.svg',
-    badge: '⏳ Coming Soon',
     processSteps: [
       { step: 1, title: 'Pay ₹99', desc: 'Confirm order on WhatsApp (+91 7895768118) and complete quick UPI payment.' },
       { step: 2, title: 'Download Videos', desc: 'Receive instant Google Drive access to download 2000+ HD AI videos without watermarks.' },
@@ -30,7 +29,7 @@ export function getDigitalProducts(): DigitalProductItem[] {
     if (saved) {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        // Enforce keeping 2000+ AI Videos Bundle with Coming Soon status
+        // Enforce returning initial products list with 2000+ AI Videos Bundle
         const aiVideosOnly = parsed.filter((p: DigitalProductItem) => p.id === 'prod-ai-videos-bundle-2000');
         if (aiVideosOnly.length > 0) {
           return [INITIAL_PRODUCTS[0]];

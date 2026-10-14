@@ -10,6 +10,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min read',
     author: 'Dizozet Editorial Team',
     publishedAt: 'March 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
     keyTakeaways: [
       'Gemini Advanced excels at multi-document synthesis and Google Drive cross-referencing.',
       'ChatGPT Plus with Canvas transforms iterative coding and long-form copywriting.',
@@ -30,6 +31,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '3 min read',
     author: 'Dizozet Team',
     publishedAt: 'March 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
     keyTakeaways: [
       'Recurring international credit card charges often fail or carry high foreign exchange markups.',
       'Transparent pricing in INR eliminates hidden fees.',
@@ -50,6 +52,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     author: 'Tech & Dev Desk',
     publishedAt: 'February 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     keyTakeaways: [
       'Mobile-first responsive layout is critical, as 85%+ of Indian users browse on smartphones.',
       'Direct WhatsApp click-to-chat buttons reduce inquiry friction.',
@@ -70,6 +73,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min read',
     author: 'Growth Specialist',
     publishedAt: 'February 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     keyTakeaways: [
       'Google Ads targets active search intent—ideal for emergency, immediate need services.',
       'Meta Ads (Instagram/FB) excels at visual storytelling and creating new demand.',
@@ -90,6 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min read',
     author: 'Dizozet Editorial Team',
     publishedAt: 'January 2026',
+    imageUrl: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80',
     keyTakeaways: [
       'Keep initial setup costs low with streamlined landing pages and e-commerce setups.',
       'Leverage digital subscriptions to create professional brand assets quickly.',

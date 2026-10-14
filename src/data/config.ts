@@ -6,7 +6,7 @@ export const DEFAULT_CONTACT_CONFIG: ContactConfig = {
   subtitle: 'Discover digital subscriptions, useful online products, and professional services at affordable prices.',
   whatsappNumber: '917895768118', // Centralized WhatsApp: 7895768118
   whatsappDisplay: '+91 78957 68118',
-  email: 'support.dizozet@gmail.com', // Exact requested email: support.dizozet@gmail.com
+  email: 'dizozet.org@gmail.com', // Official email: dizozet.org@gmail.com
   instagram: 'https://www.instagram.com/dizo_zet/', // Exact requested profile link
   instagramHandle: '@dizo_zet', // Exact requested username: @dizo_zet
   telegram: 'https://t.me/dizozet',
@@ -27,7 +27,7 @@ export function getContactConfig(): ContactConfig {
         ...DEFAULT_CONTACT_CONFIG,
         ...parsed,
         // Enforce required contact details if older keys were saved
-        email: parsed.email || DEFAULT_CONTACT_CONFIG.email,
+        email: 'dizozet.org@gmail.com',
         instagram: parsed.instagram || DEFAULT_CONTACT_CONFIG.instagram,
         instagramHandle: parsed.instagramHandle || DEFAULT_CONTACT_CONFIG.instagramHandle,
         whatsappNumber: parsed.whatsappNumber || DEFAULT_CONTACT_CONFIG.whatsappNumber,

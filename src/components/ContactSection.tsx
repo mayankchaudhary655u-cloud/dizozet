@@ -12,7 +12,7 @@ export const ContactSection: React.FC = () => {
   // Exact links requested:
   // WhatsApp: https://wa.me/917895768118
   const whatsappUrl = `https://wa.me/${config.whatsappNumber.replace(/[^0-9]/g, '')}`;
-  // Email: mailto:support.dizozet@gmail.com
+  // Email: mailto:dizozet.org@gmail.com
   const emailMailto = `mailto:${config.email}`;
   // Instagram: https://www.instagram.com/dizo_zet/
   const instagramUrl = config.instagram;

@@ -69,6 +69,7 @@ export interface BlogPost {
   publishedAt: string;
   content: string[];
   keyTakeaways?: string[];
+  imageUrl?: string;
 }
 
 export interface FAQItem {
