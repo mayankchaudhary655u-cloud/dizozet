@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Navbar } from './components/Navbar';
 import { BackButton } from './components/BackButton';
 import { Hero } from './components/Hero';
@@ -278,6 +279,9 @@ export default function App() {
         post={selectedBlog}
         onClose={() => setSelectedBlog(null)}
       />
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }
